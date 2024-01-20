@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function init() {
+            var the_object = new XMLHttpRequest();
+            the_object.open("GET", "learning_print.php", true);
+            the_object.onreadystatechange = function() {
+                document.getElementById("container").innerHTML = the_object.responseText;
+
+
+            }
+            the_object.send();
+        }
+
+
+    </script>
+
+    <button onclick="init()"> send info</button>
+    <div id="container">
+
+    </div>
+
+
+
+</body>
+</html>
