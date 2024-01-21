@@ -53,6 +53,7 @@
                 // parameters = "WHERE, WHAT, FEEDBACK DATA"
                 $.post(url, postData, function(php_table_data) {
                     $("#car-results").html(php_table_data);
+                    $("#add-car-form")[0].reset() //<---reseting the first input value field
 
 
                 })
@@ -62,7 +63,7 @@
 
             setInterval(() => {
                 updateCars()
-            }, 1);
+            }, 200);
 
             function updateCars() {
                 $.ajax({
@@ -82,6 +83,7 @@
 
 
             }
+
 
 
 
@@ -161,7 +163,16 @@
 
 
             </div>
+            <div class="col-xs-6">
+                <div id="action-container">
 
+
+
+                </div>
+
+
+
+            </div>
 
 
 

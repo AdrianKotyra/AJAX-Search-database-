@@ -12,7 +12,7 @@ else {
 
         echo "<tr>";
             echo "<td> $car_id </td>";
-            echo "<td> $cars </td>";
+            echo "<td> <a rel='".$car_id."' class='title-link' href='javascript:void(0)'>$cars</a> </td>";
 
         echo "</tr>";
     }
@@ -21,6 +21,27 @@ else {
 
 
 }
+?>
+<script>
+
+
+    $(".title-link").on('click', function(){
+        $("#action-container").show();
+        var id = $(this).attr("rel");
+        $.post("process_custom.php", {id:id}, function(data) {
+            $("#action-container").html(data);
+        }
+
+
+
+
+        );
+
+    })
+
+
+
+</script>
 
 
 
