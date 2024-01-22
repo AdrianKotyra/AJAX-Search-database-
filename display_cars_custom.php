@@ -23,7 +23,7 @@ else {
 }
 ?>
 <script>
-
+    $(document).ready(function(){
 
     $(".title-link").on('click', function(){
         $("#action-container").show();
@@ -37,6 +37,7 @@ else {
 
         );
 
+    })
     })
 
 
